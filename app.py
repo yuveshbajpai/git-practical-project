@@ -3,6 +3,8 @@ def add(a, b):
 
 
 def subtract(a, b):
+    if b > a:
+        return 0
     return a - b
 
 def login(username, password):
