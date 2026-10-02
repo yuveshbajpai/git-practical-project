@@ -10,6 +10,9 @@ def login(username, password):
         return "Login successful"
     return "Invalid credentials"
 
+def payment(amount):
+    return f"Processing payment of {amount}"
+
 
 if __name__ == "__main__":
     print("Addition:", add(10, 5))
