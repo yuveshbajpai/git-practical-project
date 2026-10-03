@@ -1,7 +1,9 @@
 name: New Production Workflow
 
 on:
-  workflow_dispatch:
+  push: 
+    branches:
+      - main
 
 jobs:
   test:
@@ -41,11 +43,11 @@ jobs:
       
       - name: Tag image
         run: |
-          docker tag new-python-app:${{github.sha}} ${{secrets.DOKCER_USERNAME}}/new-python-app:${{github.sha}} 
+          docker tag new-python-app:${{github.sha}} ${{secrets.DOCKER_USERNAME}}/new-python-app:${{github.sha}} 
 
       - name: Push image
         run: |
-          docker push ${{secrets.DOKCER_USERNAME}}/new-python-app:${{github.sha}}
+          docker push ${{secrets.DOCKER_USERNAME}}/new-python-app:${{github.sha}}
   
   deploy-to-stage:
     name: Deploy to stage
