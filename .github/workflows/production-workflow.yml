@@ -57,7 +57,7 @@ jobs:
           echo "Deploying application..."
 
   
-  deploy:
+  deploy-production:
     name: deploy to production
     runs-on: ubuntu-latest
 
