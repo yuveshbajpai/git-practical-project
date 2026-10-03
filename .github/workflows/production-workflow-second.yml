@@ -30,8 +30,10 @@ jobs:
   
   buildandpush:
 
-    name: Build job
+    name: Build and push job
     runs-on: ubuntu-latest
+
+    needs: test
 
     steps:
       - name: checkout code
